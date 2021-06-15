@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/fs-read-file",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Read the entire contents of a file.",
   "license": "Apache-2.0",
   "author": {
