@@ -227,6 +227,26 @@ $ read-file ./README.md
 
 <!-- /.cli -->
 
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   [`@stdlib/fs/exists`][@stdlib/fs/exists]: test whether a path exists on the filesystem.
+-   [`@stdlib/fs/open`][@stdlib/fs/open]: open a file.
+-   [`@stdlib/fs/read-dir`][@stdlib/fs/read-dir]: read the entire contents of a directory.
+-   [`@stdlib/fs/read-json`][@stdlib/fs/read-json]: read a file as JSON.
+-   [`@stdlib/fs/write-file`][@stdlib/fs/write-file]: write data to a file.
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 
 <section class="main-repo" >
 
@@ -283,6 +303,20 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/fs-read-file/main/LICENSE
 
 [node-fs]: https://nodejs.org/api/fs.html
+
+<!-- <related-links> -->
+
+[@stdlib/fs/exists]: https://github.com/stdlib-js/fs-exists
+
+[@stdlib/fs/open]: https://github.com/stdlib-js/fs-open
+
+[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir
+
+[@stdlib/fs/read-json]: https://github.com/stdlib-js/fs-read-json
+
+[@stdlib/fs/write-file]: https://github.com/stdlib-js/fs-write-file
+
+<!-- </related-links> -->
 
 </section>
 
