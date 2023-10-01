@@ -35,25 +35,31 @@ limitations under the License.
 
 > Read the entire contents of a file.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/fs-read-file
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/fs-read-file/tags). For example,
-
-```javascript
-import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.1.0-esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
+var readFile = require( '@stdlib/fs-read-file' );
 ```
 
 #### readFile( file\[, options], clbk )
@@ -112,7 +118,7 @@ The function accepts the same `options` and has the same defaults as [`fs.readFi
     can be replaced by an approach which addresses existence via `error` handling.
 
     ```javascript
-    import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
+    var readFile = require( '@stdlib/fs-read-file' );
 
     var file = '/path/to/file.js';
 
@@ -134,13 +140,8 @@ The function accepts the same `options` and has the same defaults as [`fs.readFi
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
+```javascript
+var readFile = require( '@stdlib/fs-read-file' );
 
 /* Sync */
 
@@ -174,17 +175,79 @@ function onFile( error, data ) {
         console.log( data );
     }
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use as a general utility, install the CLI package globally
+
+```bash
+npm install -g @stdlib/fs-read-file-cli
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: read-file [options] <filepath>
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+  --enc, --encoding encoding   Encoding.
+         --flag flag           Flag. Default: 'r'.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="notes">
+
+### Notes
+
+-   Relative file paths are resolved relative to the current working directory.
+-   Errors are written to `stderr`.
+-   File contents are written to `stdout`.
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ read-file ./README.md
+<file_contents>
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -213,7 +276,7 @@ function onFile( error, data ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -243,8 +306,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/fs-read-file.svg
 [npm-url]: https://npmjs.org/package/@stdlib/fs-read-file
 
-[test-image]: https://github.com/stdlib-js/fs-read-file/actions/workflows/test.yml/badge.svg?branch=v0.1.0
-[test-url]: https://github.com/stdlib-js/fs-read-file/actions/workflows/test.yml?query=branch:v0.1.0
+[test-image]: https://github.com/stdlib-js/fs-read-file/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/fs-read-file/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/fs-read-file/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/fs-read-file?branch=main
@@ -281,15 +344,15 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/fs/exists]: https://github.com/stdlib-js/fs-exists/tree/esm
+[@stdlib/fs/exists]: https://github.com/stdlib-js/fs-exists
 
-[@stdlib/fs/open]: https://github.com/stdlib-js/fs-open/tree/esm
+[@stdlib/fs/open]: https://github.com/stdlib-js/fs-open
 
-[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir/tree/esm
+[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir
 
-[@stdlib/fs/read-json]: https://github.com/stdlib-js/fs-read-json/tree/esm
+[@stdlib/fs/read-json]: https://github.com/stdlib-js/fs-read-json
 
-[@stdlib/fs/write-file]: https://github.com/stdlib-js/fs-write-file/tree/esm
+[@stdlib/fs/write-file]: https://github.com/stdlib-js/fs-write-file
 
 <!-- </related-links> -->
 
