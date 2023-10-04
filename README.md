@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
+import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.1.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.1.1-esm/index.mjs';
 ```
 
 #### readFile( file\[, options], clbk )
@@ -107,7 +107,7 @@ The function accepts the same `options` and has the same defaults as [`fs.readFi
     can be replaced by an approach which addresses existence via `error` handling.
 
     ```javascript
-    import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
+    import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.1.1-esm/index.mjs';
 
     var file = '/path/to/file.js';
 
@@ -135,7 +135,7 @@ The function accepts the same `options` and has the same defaults as [`fs.readFi
 <body>
 <script type="module">
 
-import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@esm/index.mjs';
+import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.1.1-esm/index.mjs';
 
 /* Sync */
 
