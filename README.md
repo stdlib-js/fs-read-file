@@ -35,38 +35,33 @@ limitations under the License.
 
 > Read the entire contents of a file.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/fs-read-file
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-readFile = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var readFile = require( 'path/to/vendor/umd/fs-read-file/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.readFile;
-})();
-</script>
+var readFile = require( '@stdlib/fs-read-file' );
 ```
 
 #### readFile( file\[, options], clbk )
@@ -147,13 +142,8 @@ The function accepts the same `options` and has the same defaults as [`fs.readFi
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var readFile = require( '@stdlib/fs-read-file' );
 
 /* Sync */
 
@@ -187,18 +177,79 @@ function onFile( error, data ) {
         console.log( data );
     }
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use as a general utility, install the CLI package globally
+
+```bash
+npm install -g @stdlib/fs-read-file-cli
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: read-file [options] <filepath>
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+  --enc, --encoding encoding   Encoding.
+         --flag flag           Flag. Default: 'r'.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="notes">
+
+### Notes
+
+-   Relative file paths are resolved relative to the current working directory.
+-   Errors are written to `stderr`.
+-   File contents are written to `stdout`.
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ read-file ./README.md
+<file_contents>
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -244,7 +295,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -298,15 +349,15 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/fs/exists]: https://github.com/stdlib-js/fs-exists/tree/umd
+[@stdlib/fs/exists]: https://github.com/stdlib-js/fs-exists
 
-[@stdlib/fs/open]: https://github.com/stdlib-js/fs-open/tree/umd
+[@stdlib/fs/open]: https://github.com/stdlib-js/fs-open
 
-[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir/tree/umd
+[@stdlib/fs/read-dir]: https://github.com/stdlib-js/fs-read-dir
 
-[@stdlib/fs/read-json]: https://github.com/stdlib-js/fs-read-json/tree/umd
+[@stdlib/fs/read-json]: https://github.com/stdlib-js/fs-read-json
 
-[@stdlib/fs/write-file]: https://github.com/stdlib-js/fs-write-file/tree/umd
+[@stdlib/fs/write-file]: https://github.com/stdlib-js/fs-write-file
 
 <!-- </related-links> -->
 
