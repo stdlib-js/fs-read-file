@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@stdlib/assert-is-browser": "^0.2.2",
+    "@stdlib/assert-is-error": "^0.2.2",
     "@stdlib/assert-is-json": "^0.2.2",
     "@stdlib/assert-is-windows": "^0.2.2",
     "@stdlib/process-exec-path": "^0.2.2",
