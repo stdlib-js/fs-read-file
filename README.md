@@ -35,19 +35,159 @@ limitations under the License.
 
 > Read the entire contents of a file.
 
+<section class="installation">
+
+## Installation
+
+```bash
+npm install @stdlib/fs-read-file
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
+
+<section class="usage">
+
+## Usage
+
+```javascript
+var readFile = require( '@stdlib/fs-read-file' );
+```
+
+#### readFile( file\[, options], clbk )
+
+Asynchronously reads the entire contents of a file.
+
+```javascript
+readFile( __filename, onFile );
+
+function onFile( error, data ) {
+    if ( error ) {
+        throw error;
+    }
+    console.log( data );
+}
+```
+
+The function accepts the same `options` and has the same defaults as [`fs.readFile()`][node-fs].
+
+#### readFile.sync( file\[, options] )
+
+Synchronously reads the entire contents of a `file`.
+
+```javascript
+var out = readFile.sync( __filename );
+if ( out instanceof Error ) {
+    throw out;
+}
+console.log( out );
+```
+
+The function accepts the same `options` and has the same defaults as [`fs.readFileSync()`][node-fs].
+
+</section>
+
+<!-- /.usage -->
+
+<section class="notes">
+
+## Notes
+
+-   The difference between this API and [`fs.readFileSync()`][node-fs] is that [`fs.readFileSync()`][node-fs] will throw if an `error` is encountered (e.g., if given a non-existent `path`) and this API will return an `error`. Hence, the following anti-pattern
 
 
+    ```javascript
+    var fs = require( 'fs' );
 
+    var file = '/path/to/file.js';
 
+    // Check for existence to prevent an error being thrown...
+    if ( fs.existsSync( file ) ) {
+        file = fs.readFileSync( file );
+    }
+    ```
 
+    can be replaced by an approach which addresses existence via `error` handling.
 
+    ```javascript
+    var readFile = require( '@stdlib/fs-read-file' );
 
+    var file = '/path/to/file.js';
 
+    // Explicitly handle the error...
+    file = readFile.sync( file );
+    if ( file instanceof Error ) {
+        // You choose what to do...
+        console.error( file.message );
+    }
+    ```
 
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+## Examples
+
+<!-- eslint no-undef: "error" -->
+
+```javascript
+var readFile = require( '@stdlib/fs-read-file' );
+
+/* Sync */
+
+var file = readFile.sync( __filename, 'utf8' );
+// returns <string>
+
+console.log( file instanceof Error );
+// => false
+
+file = readFile.sync( 'beepboop', {
+    'encoding': 'utf8'
+});
+// returns <Error>
+
+console.log( file instanceof Error );
+// => true
+
+/* Async */
+
+readFile( __filename, onFile );
+readFile( 'beepboop', onFile );
+
+function onFile( error, data ) {
+    if ( error ) {
+        if ( error.code === 'ENOENT' ) {
+            console.error( 'File does not exist.' );
+        } else {
+            throw error;
+        }
+    } else {
+        console.log( data );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+* * *
 
 <section class="cli">
 
-
+## CLI
 
 <section class="installation">
 
@@ -65,7 +205,7 @@ npm install -g @stdlib/fs-read-file-cli
 
 <section class="usage">
 
-## Usage
+### Usage
 
 ```text
 Usage: read-file [options] <filepath>
@@ -84,7 +224,7 @@ Options:
 
 <section class="notes">
 
-## Notes
+### Notes
 
 -   Relative file paths are resolved relative to the current working directory.
 -   Errors are written to `stderr`.
@@ -96,7 +236,7 @@ Options:
 
 <section class="examples">
 
-## Examples
+### Examples
 
 ```bash
 $ read-file ./README.md
@@ -115,9 +255,10 @@ $ read-file ./README.md
 
 <section class="related">
 
+* * *
+
 ## See Also
 
--   <span class="package-name">[`@stdlib/fs-read-file`][@stdlib/fs-read-file]</span><span class="delimiter">: </span><span class="description">read the entire contents of a file.</span>
 -   <span class="package-name">[`@stdlib/fs-exists`][@stdlib/fs/exists]</span><span class="delimiter">: </span><span class="description">test whether a path exists on the filesystem.</span>
 -   <span class="package-name">[`@stdlib/fs-open`][@stdlib/fs/open]</span><span class="delimiter">: </span><span class="description">open a file.</span>
 -   <span class="package-name">[`@stdlib/fs-read-dir`][@stdlib/fs/read-dir]</span><span class="delimiter">: </span><span class="description">read the entire contents of a directory.</span>
@@ -141,7 +282,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-### Community
+#### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -154,7 +295,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -164,8 +305,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-read-file-cli.svg
-[npm-url]: https://npmjs.org/package/@stdlib/fs-read-file-cli
+[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-read-file.svg
+[npm-url]: https://npmjs.org/package/@stdlib/fs-read-file
 
 [test-image]: https://github.com/stdlib-js/fs-read-file/actions/workflows/test.yml/badge.svg?branch=main
 [test-url]: https://github.com/stdlib-js/fs-read-file/actions/workflows/test.yml?query=branch:main
@@ -180,8 +321,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
