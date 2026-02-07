@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/fs-read-file/tags). For example,
+
+```javascript
 import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.2.3-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.2.3-deno/mod.js';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@deno/mod.js';
 ```
 
 #### readFile( file\[, options], clbk )
@@ -107,7 +112,7 @@ The function accepts the same `options` and has the same defaults as [`fs.readFi
     can be replaced by an approach which addresses existence via `error` handling.
 
     ```javascript
-    import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.2.3-deno/mod.js';
+    import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@deno/mod.js';
 
     var file = '/path/to/file.js';
 
@@ -130,7 +135,7 @@ The function accepts the same `options` and has the same defaults as [`fs.readFi
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@v0.2.3-deno/mod.js';
+import readFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-read-file@deno/mod.js';
 
 /* Sync */
 
