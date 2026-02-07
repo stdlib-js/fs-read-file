@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/fs-read-file",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Read the entire contents of a file.",
   "license": "Apache-2.0",
   "author": {
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@stdlib/cli-ctor": "^0.2.2",
-    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2"
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.3"
   },
   "devDependencies": {
     "@stdlib/assert-is-browser": "^0.2.2",
