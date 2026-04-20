@@ -49,6 +49,7 @@
     "@stdlib/assert-is-json": "^0.2.3",
     "@stdlib/assert-is-windows": "^0.2.3",
     "@stdlib/process-exec-path": "^0.2.3",
+    "@stdlib/string-format": "^0.2.3",
     "@stdlib/string-replace": "^0.2.3",
     "@stdlib/string-right-trim": "^0.2.3",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
